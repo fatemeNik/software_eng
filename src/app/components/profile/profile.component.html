@@ -1,0 +1,88 @@
+ <div class="body py-4" dir="rtl">
+  <div class="container"> 
+    
+    <h2>ویرایش پروفایل</h2>
+    
+    <form id="myForm" [formGroup]="saveForm">
+  
+        <div class="form-row">
+            
+            <div class="form-group col-md-6 text-right" >
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>نام</mat-label>
+                    <input matInput formControlName="firstName" type="text">
+                </mat-form-field>
+                <!-- <input matInput  class="form-control" id="firstName" > -->
+            </div> <!-- /form-group -->
+  
+            <div class="form-group col-md-6 text-right">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>نام خانوادگی</mat-label>
+                    <input matInput type="text" formControlName="lastName">
+                </mat-form-field>
+            </div><!-- /form-group -->
+  
+        </div><!-- /form-row -->
+  
+        <div class="form-group text-right">
+            <mat-form-field class="example-full-width w-100">
+                <mat-label>کلید عبور(جدید)</mat-label>
+                <input matInput type="text" formControlName="password">
+            </mat-form-field>
+        </div><!-- /form-group --> 
+
+        <div class="form-group text-right">
+            <mat-form-field class="example-full-width w-100">
+                <mat-label>درباره من</mat-label>
+                <input matInput type="text" formControlName="bio">
+            </mat-form-field>
+        </div><!-- /form-group --> 
+      
+        <div class="row">
+            <div class="form-group text-right col-4">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>مربی</mat-label>
+                    <input matInput type="text" formControlName="coach">
+                </mat-form-field>
+            </div><!-- /form-group -->
+
+            <div class="form-group text-right col-4">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>شهر</mat-label>
+                    <input matInput type="text" formControlName="city">
+                </mat-form-field>
+            </div><!-- /form-group -->
+
+            <div class="form-group text-right col-4">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>تاریخ تولد</mat-label>
+                    <input matInput type="text" formControlName="birthday">
+                </mat-form-field>
+            </div><!-- /form-group -->
+        </div>
+  
+        <div class="form-row form__comments">
+  
+            <div id="form__comments-by" class="form-group col-md-6"></div>
+            <div id="form__comments-txt" class="form-group col-md-6"></div>
+  
+        </div><!-- /form-row -->
+  
+        <div class="form__btns pb-5">
+  
+             <!-- <form [formGroup]="saveForm" (ngSubmit)="saveForm()"></form> -->
+                 <!-- <input type="submit">  -->
+                    <button mat-raised-button color="warn">لغو</button>
+                    <!-- <button mat-raised-button color="warn" [formGroup]="cancelForm" (ngSubmit)="cancelForm()">لغو</button> -->
+            
+                           
+            <!-- <form [formGroup]="cancelForm" (ngSubmit)="cancelForm()"></form> -->
+                <!-- <input type="submit"> -->
+                    <button mat-raised-button (click)="onsubmit()" color="primary" >ذخیره</button> 
+            
+        </div><!-- /form__btns -->
+  
+    </form>
+  
+  </div><!-- /container --> 
+</div>

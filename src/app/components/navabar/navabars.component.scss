@@ -1,0 +1,76 @@
+// .navbar-brand img{
+//     height: 60px;
+//     font-size: 20px;
+    
+// }
+.navbar-brand{
+
+    font-size: 36px;
+    color: #795548;
+}
+
+.logo img{
+    height: 70px;
+    width : 70px;
+    margin: 0 0 0 30px;
+}
+.header{
+
+    //background-image: url(../../../assets/images/816149.jpg);
+    background-color: transparent;
+    height: 10vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-scroll {
+	background: rgba(0, 0, 0, 0.87);
+	padding: 0;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.8s;
+    *{
+        color: #31dca4;
+    }
+    font-size: 20px;
+    padding: 0px 30px 0px 0px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.lname-logged-in mat-button{
+    font-size: 20px;
+}
+
+.collapse.navbar-collapse button{
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    background-color: black;
+    font-size: 18px;
+    font-weight: bold;
+    color: #31dca4;   
+}
+
+.dropdown-menu a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #31dca4;
+
+}
+
+.dropdown-menu a:hover {
+    color: white;
+    background-color: #31dca4;
+}
+

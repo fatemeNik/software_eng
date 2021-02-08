@@ -1,0 +1,67 @@
+<div class="authentication">
+  <div>
+
+    <mat-tab-group dir="rtl">
+      <mat-tab label="ورود" >
+        <div class="login" >
+         
+
+          <p>{{text_login}}</p>
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-container">
+            
+            <mat-form-field appearance="fill">
+               <mat-label>iripin</mat-label>
+               <input matInput formControlName="iripin" type="text">
+            </mat-form-field>
+             
+            <mat-form-field appearance="fill" >
+               <mat-label>گذرواژه</mat-label>
+               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" type="password">
+                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                 </button>
+            </mat-form-field>
+            <!-- <p><input formControlName="con_password" type="password" placeholder="Confirm Password" ></p> -->
+            <!-- <p><input type="submit" value="ورود"></p>-->
+            <button mat-raised-button type="submit" color="warn">ورود</button>
+
+          </form>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="ثبت نام"> 
+        <div class="signup">
+          
+          <p>{{text_signup}}</p>
+          
+          <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="signup-container">
+            <mat-form-field appearance="fill">
+               <mat-label>iripin</mat-label>
+               <input matInput formControlName="a_iripin" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label>گذرواژه</mat-label>
+               <input matInput [type]="hide ? 'password' : 'text'" formControlName="a_password" type="password">
+                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                 </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label>تایید گذرواژه</mat-label>
+               <input matInput [type]="hide ? 'password' : 'text'" formControlName="a_con_password" type="text">
+                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                 </button>
+            </mat-form-field>
+
+            <!--p><input type="submit" value="ثبت نام"></p-->
+            <button mat-raised-button type="submit" color="warn">ثبت نام</button>
+          </form>
+          
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

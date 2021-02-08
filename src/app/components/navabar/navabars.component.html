@@ -1,0 +1,56 @@
+<div class = "header">
+  <nav #nav class="navbar navbar-expand-lg navbar-dark">
+      <div class = "logo">
+       <a class="navbar-brand" href="#"> <div class="image"> <img src="../../../assets/images/tennisLogo_glow.png" alt=""></div> </a>
+      </div>
+       
+ 
+        <div class="lname-logged-in">
+
+          <button mat-button [matMenuTriggerFor]="menu">{{first_name}}  {{last_name}}</button>
+          <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active" >پروفایل</button>
+          <button mat-menu-item>خروج  </button>
+          </mat-menu>
+
+        </div>
+
+       
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li>
+              <button mat-button (click)="openDialog()" *ngIf="!isLog" class="nav-link"> ثبت نام /ورود</button>
+
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                کاربران
+              </a>
+              <div class="dropdown-menu text-right" aria-labelledby="navbarDropdown" >
+                <a class="dropdown-item" href="#">بازیکنان</a>
+                <a class="dropdown-item" href="#">مربیان</a>
+              </div>
+            </li>
+            <li class="nav-item " style="padding:0 0 0 10px">
+              <a class="nav-link" [routerLink]="['/ranking']" routerLinkActive="router-link-active" >رنکینگ</a>
+            </li>
+            <li class="nav-item " style="padding:0 0 0 10px">
+              <a class="nav-link" href="#">مسابقات</a>
+            </li>
+            <li class="nav-item" style="padding:0 0 0 10px">
+              <a class="nav-link" href="#">صفحه اصلی</a>
+            </li>
+            
+          </ul>
+        </div>
+  </nav>
+</div>

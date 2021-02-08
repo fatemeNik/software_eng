@@ -1,0 +1,163 @@
+// // .back-img img{
+// //     width: 100%;
+// // }
+// html {
+//     overflow: hidden;
+// }
+// body {
+//     margin: 0;
+//     font-size: 26px;
+//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+//     color: #ffffff;
+//     height: 100vh;
+//     perspective: 1px;
+//     transform-style: preserve-3d;
+//     overflow-x:hidden;
+//     overflow-y:auto;
+// }
+// .parallax-wrapper {
+//     width: 100vw;
+//     height:100vh;
+//     padding-top:20vh;
+//     box-sizing: border-box;
+//     transform-style: preserve-3d;
+// }
+// .parallax-wrapper::before {
+//     content:"";
+//     width: 100vw;
+//     height: 100vh;
+//     top:0;
+//     left:0;
+//     background-image: url("../../../assets/images/816149.jpg");
+//     position: absolute;
+//     z-index: -1;
+//     transform:translateZ(-1px) scale(2);
+// }
+// .regular-wrapper {
+//     width: 100vw;
+//     height: 100vh;
+//     padding-top: 10vh;
+//     background-image: url("../../../assets/images/grass_tennis.jpg");
+//     z-index: 2;
+//     position: relative;
+//     box-sizing: border-box;
+
+// }
+// .content {
+//     margin: 0 auto;
+//     padding: 50px;
+//     width: 50%;
+//     background: #aaa;
+// }
+
+
+.parallax {
+    /* The image used */
+    background-image: url("../../../assets/images/enghelab_court.jpg");
+  
+    /* Set a specific height */
+    min-height: 800px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  // .parallax-scroll{
+
+  //   height: 1px; 
+  //   background-image: url("../../../assets/images/Wilson-Australian-Open-Tennis-Ball.jpg");
+     
+  //   min-height: 880px;
+  //   font-size: 36px;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  // }
+
+  // .parallax-scroll2{
+
+  //   height:1px; 
+  //   background-image: url("../../../assets/images/816149.jpg"); 
+  //   min-height: 550px;
+  //   font-size: 36px;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+
+  // }
+
+  .parallax-scroll3{
+
+    height: 200px; 
+    background-image: url("../../../assets/images/yugi.jpg"); 
+    min-height: 250px;
+    font-size: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.parallax-scroll4{
+
+  /*The image used */
+  background-image: url("../../../assets/images/top-background.png");
+    
+  /* Set a specific height */
+  min-height: 1000px; 
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+}
+
+// .content{
+//   text-align: justify;
+//   padding-top: 2%;
+//   color: rgb(0, 0, 0);
+//   background-color: rgb(93, 133, 80);
+//   font-size: 24px;
+//   height: 250px;
+//   font-family: Arial;
+// }
+
+h3 {
+  font: 36px "Lato", sans-serif;
+  color: #111;
+  text-align: center;
+}
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+.table-title{
+
+  font: 36px "Lato", sans-serif;
+  font-weight: bold;
+  color: #1a237e;
+  text-align: center;
+  padding: 8%;
+  
+  
+}
+
