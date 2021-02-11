@@ -31,7 +31,7 @@ export class TableComponent implements OnInit {
   dataSource: any;
   loading: boolean = false;
 
-  columnsToDisplay = ['iripin', 'city', 'last_name', 'first_name', 'id'];
+  columnsToDisplay = ['image', 'iripin', 'city', 'last_name', 'first_name', 'id'];
   expandedElement: player_table | null;
   constructor(private api: ApiService) {
 

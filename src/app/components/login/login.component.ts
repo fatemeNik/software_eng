@@ -84,6 +84,9 @@ export class LoginComponent implements OnInit {
     }
   } 
 
+  logout(){
+    
+  }
   onNoClick(): void {
     this.dialogRef.close();
   }

@@ -1,20 +1,58 @@
-table {
+table{ 
     width: 100%;
-    color: #1a237e;
+    background-color:rgba(255, 81, 0, 0) ;
   }
-  
+
   tr.example-detail-row {
     height: 0;
+    
   }
   
   tr.example-element-row:not(.example-expanded-row):hover {
-    background: whitesmoke;
+    background: #31dca4;
   }
-  
-  tr.example-element-row:not(.example-expanded-row):active {
-    background: #efefef;
+
+
+  .element-diagram img{
+    width: 15%;
+    // height: 10%;
   }
+
+  tr.example-element-row:not(.example-expanded-row){
+    background-color: rgba(215, 252, 233, 0.589);
+   }
+
+  // tr.example-element-row:not(.example-expanded-row):active {
+  //   background: #c23232ef;
+  // }
   
+  // tr.example-element-row:not(.example-expanded-row){
+  //   background-color: rgba(215, 252, 233, 0.589);
+  // }
+
+  .ir{
+   color:#1a237e;
+   font-size:19px;
+   font-weight: bold;
+   //background-color: rgba(215, 252, 233, 0.589);
+   background-color:rgba(255, 81, 0, 0.37);
+  }
+
+  .thead{
+    color:#1a237e;
+    font-size:19px;
+    font-weight: bold;
+    //background-color: rgba(215, 252, 233, 0.589);
+     background-color:rgba(255, 81, 0, 0.37);
+   }
+
+   .tcell{
+    color:#1a237e;
+    font-weight: bold;
+    font-size: 100%;
+
+
+   }
   .example-element-row td {
     border-bottom-width: 0;
   }
@@ -24,15 +62,15 @@ table {
     display: flex;
   }
   
-  .example-element-diagram {
-    min-width: 80px;
-    border: 2px solid black;
-    padding: 8px;
-    font-weight: lighter;
-    margin: 8px 0;
-    height: 104px;
+  // .example-element-diagram {
+  //   min-width: 80px;
+  //   border: 2px solid black;
+  //   padding: 8px;
+  //   font-weight: lighter;
+  //   margin: 8px 0;
+  //   height: 104px;
     
-  }
+  // }
 
   .player-images{ 
     width: 30%;
@@ -58,10 +96,10 @@ table {
 
   .navbar.container ng th{
     text-align: right;
-  
+    
   } 
 
-  
+ 
   .row{
     font-size: 18px;
     color:#1a237e;

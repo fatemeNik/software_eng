@@ -1,7 +1,7 @@
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -52,6 +52,7 @@ import {routes} from './app-routing.module';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TournamentComponent } from './components/tournament/tournament.component';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -116,6 +117,7 @@ import { TournamentComponent } from './components/tournament/tournament.componen
     RouterModule
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     
   ],
   bootstrap: [AppComponent]

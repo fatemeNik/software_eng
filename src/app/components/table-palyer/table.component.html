@@ -1,42 +1,42 @@
-<div class = "navbar container"  *ngIf="loading "> 
+<div class = "navbar container"  *ngIf="loading ">  
 
 
   <table mat-table 
     [dataSource]="dataSource" multiTemplateDataRows
     class="mat-elevation-z8">
    <ng-container matColumnDef="iripin">
-     <th  mat-header-cell *matHeaderCellDef style="color:#1a237e;font-size:19px" > iripin </th>
-     <td mat-cell *matCellDef="let element"> {{element.iripin}} </td>
+     <th  mat-header-cell *matHeaderCellDef class="ir" > iripin </th>
+     <td mat-cell *matCellDef="let element" style="color:#1a237e;font-weight: bold;font-size: 90%"> {{element.iripin}} </td>
    </ng-container>
     
    
   
    <!-- Name Column -->
    <ng-container matColumnDef="first_name">
-     <th  mat-header-cell *matHeaderCellDef style="color:#1a237e;font-size:22px"> نام </th>
-     <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+     <th  mat-header-cell *matHeaderCellDef class="thead" > نام </th>
+     <td mat-cell *matCellDef="let element" class="tcell"> {{element.first_name}} </td>
    </ng-container>
   
    <ng-container matColumnDef="last_name">
-     <th mat-header-cell *matHeaderCellDef style="color:#1a237e;font-size:22px"> نام خانوادگی </th>
-     <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+     <th mat-header-cell *matHeaderCellDef class="thead"> نام خانوادگی </th>
+     <td mat-cell *matCellDef="let element" class="tcell"> {{element.last_name}} </td>
    </ng-container>
   
    <ng-container matColumnDef="city">
-     <th  mat-header-cell *matHeaderCellDef style="color:#1a237e;font-size:22px"> شهر </th>
-     <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+     <th  mat-header-cell *matHeaderCellDef class="thead"> شهر </th>
+     <td mat-cell *matCellDef="let element" class="tcell"> {{element.city}} </td>
    </ng-container>
   
    <ng-container matColumnDef="id" >
-     <th  mat-header-cell *matHeaderCellDef style="color:#1a237e;font-size:22px"> شماره </th>
-     <td mat-cell *matCellDef="let element"> {{element.id}}  </td>
+     <th  mat-header-cell *matHeaderCellDef class="thead"> شماره </th>
+     <td mat-cell *matCellDef="let element" class="tcell"> {{element.id}}  </td>
    </ng-container>
 
-<!-- 
+ 
    <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef> تصویر </th>
     <td mat-cell *matCellDef="let element"> </td>
-   </ng-container> -->
+   </ng-container>
   
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
   <ng-container matColumnDef="expandedDetail">
@@ -44,7 +44,9 @@
    <div class="example-element-detail"
         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
      <div class="element-diagram" >
-      <img src="{{element.image}}" alt="">     </div>
+       <img src="{{element.image}}" alt=""> 
+      <!--p>image</p-->
+     </div>
      
    </div>
   </td>

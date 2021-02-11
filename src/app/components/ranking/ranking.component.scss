@@ -1,12 +1,55 @@
 table {
   width: 100%;
   padding: 100px;
+  //background-color: #93c13e86;
+  //background-color:#b388ff;
+  //background-color: aliceblue;
 }
   
-th.mat-sort-header-sorted {
-  color: black;
+.thead{
+  color: #4a148c ;
+  font-size: 150%;
+  font-weight: bold;
+  // background-color: #ffd6a5;
+  background-color:#b388ff;
 }
 
+.tcell{
+  color: black;
+  font-size: 120%;
+  font-weight: bold;
+  background-color: #cdeac06e;
+}
+
+
+.ir{
+  color: #4a148c ;
+  font-size: 140%;
+  font-weight: bold;
+  // background-color: #ffd6a5;
+  background-color:#b388ff;
+}
+
+.cir{
+  color: black;
+  font-size: 110%;
+  font-weight: bold;
+  background-color: #cdeac07e;
+}
+
+
+// td.mat-header-row{
+//   background-color: black;
+// }
+tr.mat-row.cdk-row.ng-star-inserted{
+  border-style: solid;
+  border-color: #b388ff ;
+  border-width: 0 0 2.4px 0;
+
+}
+tr.mat-row.cdk-row.ng-star-inserted:hover{
+  background-color: #b2ff59;
+}
 .container{
   padding-top: 100px;
 }

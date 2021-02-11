@@ -1,0 +1,96 @@
+.container{
+    padding-top: 10%; 
+  }
+  
+  
+  .body-container{
+    background-image: url("../../../assets/images/tennis_background_lowres.jpg");
+    background-size: cover;
+    min-height: 1000px; 
+  }
+  
+  table {
+    width: 100%;
+    color: #1a237e;
+  }
+
+  .thead{
+   color:#1a237e;
+   font-size:22px;
+  }
+  
+ .tcontent{
+    font-size:18px;
+ }
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+    
+  }
+  
+  .player-images{ 
+    width: 30%;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  
+  .element-diagram img{
+    size: 10px;
+  }
+  
+  .navbar.container ng th{
+    text-align: right;
+  
+  } 
+  
+  .element-diagram{
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  .row{
+    font-size: 18px;
+    color:#1a237e;
+  }
+  
+  

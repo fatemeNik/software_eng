@@ -28,7 +28,7 @@ export class RankingComponent implements OnInit {
   loading: boolean = false;
   // expandedElement: player_rank | null;
   dataSource:any=[];
-  displayedColumns = ['id', 'first_name', 'last_name', 'city', 'total_score', 'iripin'];
+  displayedColumns = ['iripin','total_score','city', 'last_name',  'first_name', 'id'];
   // dataSource = new MatTableDataSource<player_rank>(this.ELEMENT_DATA);
   @ViewChild(MatSort) sort: MatSort;
 

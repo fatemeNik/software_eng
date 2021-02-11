@@ -7,10 +7,11 @@
   
         <div class="form-row">
             
+  
             <div class="form-group col-md-6 text-right" >
                 <mat-form-field class="example-full-width w-100">
                     <mat-label>نام</mat-label>
-                    <input matInput formControlName="firstName" type="text">
+                    <input matInput formControlName="first_name" type="text">
                 </mat-form-field>
                 <!-- <input matInput  class="form-control" id="firstName" > -->
             </div> <!-- /form-group -->
@@ -18,7 +19,21 @@
             <div class="form-group col-md-6 text-right">
                 <mat-form-field class="example-full-width w-100">
                     <mat-label>نام خانوادگی</mat-label>
-                    <input matInput type="text" formControlName="lastName">
+                    <input matInput type="text" formControlName="last_name">
+                </mat-form-field>
+            </div><!-- /form-group -->
+
+            <div class="form-group col-md-6 text-right">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>تصویر</mat-label>
+                    <input matInput type="text" formControlName="image">
+                </mat-form-field>
+            </div><!-- /form-group -->
+
+            <div class="form-group col-md-6 text-right">
+                <mat-form-field class="example-full-width w-100">
+                    <mat-label>نقش</mat-label>
+                    <input matInput type="text" formControlName="partner">
                 </mat-form-field>
             </div><!-- /form-group -->
   

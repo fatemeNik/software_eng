@@ -35,14 +35,16 @@ export class ProfileComponent implements OnInit {
   this.id = this.user.id;
   this.saveForm = this.formbuilder.group({
 
-    firstName:['', [Validators.required]],
-    lastName:['', [Validators.required]],
+    iripin:['', [Validators.required]],
+    first_name:['', [Validators.required]],
+    last_name:['', [Validators.required]],
     password:['', [Validators.required]],
     city:['', [Validators.required]],
-    // image:['', [Validators.required]],
+    image:['', [Validators.required]],
     bio:['', [Validators.required]],
     coach:['', [Validators.required]],
     birthday:['', [Validators.required]],
+    partner:['', [Validators.required]]
 
 
  });
@@ -59,14 +61,16 @@ export class ProfileComponent implements OnInit {
   // this.saveForm.controls.coach.setValue(this.user.coach);
   // this.saveForm.controls.birthday.setValue(this.user.birthday);
 //  });
-  this.saveForm.controls.firstName.setValue(this.user.first_name);
-  this.saveForm.controls.lastName.setValue(this.user.last_name);
-  // this.saveForm.controls.password.setValue(this.user.password);
+ this.saveForm.controls.iripin.setValue(this.user.iripin);
+  this.saveForm.controls.first_name.setValue(this.user.first_name);
+  this.saveForm.controls.last_name.setValue(this.user.last_name);
+  this.saveForm.controls.password.setValue(this.user.password);
   this.saveForm.controls.city.setValue(this.user.city);
-  // this.saveForm.controls.image.setValue(this.user.image);
+  this.saveForm.controls.image.setValue(this.user.image);
   this.saveForm.controls.bio.setValue(this.user.bio);
   this.saveForm.controls.coach.setValue(this.user.coach);
   this.saveForm.controls.birthday.setValue(this.user.birthday);
+  this.saveForm.controls.partner.setValue(this.user.partner);
 
 
   }
@@ -78,7 +82,7 @@ export class ProfileComponent implements OnInit {
      
     localStorage.getItem('user');
     this.api.update_player_data(this.saveForm.value).subscribe(data => {
-    
+      console.log(data);
     });
   }
 }
