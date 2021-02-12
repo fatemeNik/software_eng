@@ -53,6 +53,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TournamentComponent } from './components/tournament/tournament.component';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { PlayerComponent } from './components/player/player.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -68,7 +70,9 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
     LoginComponent,
     RankingComponent,
     ProfileComponent,
-    TournamentComponent
+    TournamentComponent,
+    PlayerComponent,
+    ChatComponent
     ],
   imports: [
     BrowserAnimationsModule,

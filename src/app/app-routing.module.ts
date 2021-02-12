@@ -6,6 +6,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './components/table-palyer/table.component';
+import { PlayerComponent } from './components/player/player.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 export const routes: Routes = [
@@ -15,8 +17,11 @@ export const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path: 'ranking', component: RankingComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'tournament', component: TournamentComponent}
+  {path: 'tournament', component: TournamentComponent},
+  {path: 'player', component: PlayerComponent},
+  {path: 'chat', component: ChatComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

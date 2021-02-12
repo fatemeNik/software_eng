@@ -4,6 +4,8 @@ import { templateJitUrl, templateSourceUrl } from '@angular/compiler';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-navabars',
@@ -20,8 +22,8 @@ export class NavabarsComponent implements OnInit {
   last_name: string;
   isLog: boolean;
   
-  constructor(public dialog: MatDialog, private sharedData: SharedDataService) {
-  }
+  constructor(public dialog: MatDialog, private sharedData: SharedDataService,
+     private api: ApiService,private auth: AuthenticationService) {}
 
   
   openDialog() {
@@ -46,6 +48,7 @@ export class NavabarsComponent implements OnInit {
 
   ngOnInit() {  
 
+
     this.sharedData.fname.subscribe(name =>{
 
       this.first_name = name;
@@ -62,4 +65,14 @@ export class NavabarsComponent implements OnInit {
     // console.log('this.sharedData.fname');
   }
 
+
+  logout(){
+    this.auth.logout();
+    console.log('currentUser');
+  }
+
+
+//   logout(){
+//     this.auth.logout(JSON.parse(localStorage.getItem('currentUser')));
+//  }
 }

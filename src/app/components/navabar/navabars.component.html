@@ -7,10 +7,10 @@
  
         <div class="lname-logged-in">
 
-          <button mat-button [matMenuTriggerFor]="menu" class="name">{{first_name}}  {{last_name}}</button>
+          <button mat-button [matMenuTriggerFor]="menu" class="name" *ngIf="isLog">{{first_name}}  {{last_name}}</button>
           <mat-menu #menu="matMenu">
           <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active" >پروفایل</button>
-          <button mat-menu-item>خروج  </button>
+          <button mat-menu-item (click)="logout()" *ngIf="isLog">خروج  </button>
           </mat-menu>
 
         </div>
@@ -36,7 +36,7 @@
                 کاربران
               </a>
               <div class="dropdown-menu text-right" aria-labelledby="navbarDropdown" >
-                <a class="dropdown-item" href="#">بازیکنان</a>
+                <a class="dropdown-item" [routerLink]="['/player']" routerLinkActive="router-link-active">بازیکنان</a>
                 <a class="dropdown-item" href="#">مربیان</a>
               </div>
             </li>

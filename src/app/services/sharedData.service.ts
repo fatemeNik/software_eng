@@ -9,12 +9,11 @@ export class SharedDataService {
 
   // private content = new BehaviorSubject<str>();
 
- 
   lname: BehaviorSubject<any> = new BehaviorSubject('');
   fname: BehaviorSubject<any> = new BehaviorSubject('');
   isLogin: BehaviorSubject<boolean> = new BehaviorSubject(false);// in bayad ke false bashe
-
- 
+  to : BehaviorSubject<any> = new BehaviorSubject('');
+  content : BehaviorSubject<any> = new BehaviorSubject('');
 
 constructor() {
 

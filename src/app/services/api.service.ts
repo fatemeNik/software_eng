@@ -16,9 +16,14 @@ export class ApiService {
       return this.http.get('https://inshallahfinal.herokuapp.com/player', {headers: header});
     } 
 
+    logout_player(){
+
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      return this.http.get('http://127.0.0.1:5000/logout', {headers: header});
+    } 
     update_player_data(data){
       let currentUser = this.authenticationService.currentUserValue;
-      // let content = {}
       console.log(String(currentUser.token));
       //  let header: HttpHeaders = new HttpHeaders();
       //  header.append( "Content-Type", "application/json" );
@@ -34,11 +39,34 @@ export class ApiService {
       return this.http.get('https://inshallahfinal.herokuapp.com/tournament', {headers: header});
     }
 
-    // specific_player_data(iripin){
+    get_signup(){  
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      return this.http.get('http://127.0.0.1:5000/signup', {headers: header});
+    }
+
+    get_message(){  
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      header.append("Access-Control-Allow-Origin","*");
+      return this.http.get('http://127.0.0.1:5000/message', {headers: header});
+    }
+
+    show_content(){
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      header.append("Access-Control-Allow-Origin","*");
+      return this.http.post('http://127.0.0.1:5000/show_content', {headers: header});
+    }
+
+    // post_message(data){
 
     //   let header: HttpHeaders = new HttpHeaders();
-    //   header.append( "Content-Type", "application/json" );
-    //   return this.http.get('https://inshallahfinal.herokuapp.com/update/'+iripin);
+    //   header.append( "Content-Type", "application/json" );      //  let header: HttpHeaders = new HttpHeaders();
+    //   //  header.append( "Content-Type", "application/json" );
+    //   //  header.append( "x-access-token", String(currentUser.token) );
+    //   //return this.http.put('http://127.0.0.1:5000/new',data, {headers: header});
+    //   return this.http.post('http://127.0.0.1:5000/message', data);
     // }
 
 }

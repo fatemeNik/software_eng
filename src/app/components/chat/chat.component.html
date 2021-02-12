@@ -1,0 +1,51 @@
+
+<form [formGroup]="messageForm" (ngSubmit)="message()" >
+<mat-grid-list cols="1" rowHeight="100px" class="top">
+
+    <mat-grid-tile style="background-color:red" >
+     
+          <mat-form-field class="example-full-width">
+              <mat-label>...متن پیام</mat-label>
+              <textarea matInput placeholder="...سلام، حال شما" formControlName="content"></textarea>
+         </mat-form-field>
+    </mat-grid-tile>
+
+   
+
+</mat-grid-list>
+
+<mat-grid-list cols="2" rowHeight="100px" class="bottom">
+    <mat-grid-tile >
+      <button mat-raised-button type="submit" color="primary">ارسال</button>
+     
+    </mat-grid-tile>
+    <mat-grid-tile  style="background-color:green">
+    <mat-form-field appearance="fill">
+    <mat-label>گیرنده</mat-label>
+    <input matInput formControlName="to">
+    </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="100px" class="bottom">
+     <mat-grid-tile style="background-color:yellow">
+     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="content">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element"> {{element.content}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>
+     
+     
+     
+     </mat-grid-tile>
+</mat-grid-list>
+<form (ngSubmit)="show_content()"> <button mat-raised-button type="submit" color="warn">نمایش پیام ها</button></form>
+
+</form>
+
+

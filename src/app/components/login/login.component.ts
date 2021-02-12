@@ -12,6 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./login.component.scss'],
   encapsulation: ViewEncapsulation.None
 })  
+
 export class LoginComponent implements OnInit {
 
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   public SignUpForm: FormGroup;
   public text_login = '';
   public text_signup = '';
-
+  
   hide = true;
   
   constructor(private formbuildr:FormBuilder, private http:HttpClient,
@@ -82,11 +83,9 @@ export class LoginComponent implements OnInit {
           this.text_signup = "یا گذرواژه اشتباه است iripin"
         })
     }
-  } 
+  }  
 
-  logout(){
-    
-  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
