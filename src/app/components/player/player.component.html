@@ -34,6 +34,8 @@
             <div class="element-diagram" >
                 <!-- <img src="{{element.prize}}" alt=""> -->
                  <a [routerLink]="['/chat']" routerLinkActive="router-link-active"> <mat-icon class="icon"> message</mat-icon> </a>
+                  <button mat-raised-button (click)="request(element.iripin)" color="primary">درخواست</button>
+
 
             </div>
          </div>

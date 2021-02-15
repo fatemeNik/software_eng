@@ -13,7 +13,13 @@ export class SharedDataService {
   fname: BehaviorSubject<any> = new BehaviorSubject('');
   isLogin: BehaviorSubject<boolean> = new BehaviorSubject(false);// in bayad ke false bashe
   to : BehaviorSubject<any> = new BehaviorSubject('');
-  content : BehaviorSubject<any> = new BehaviorSubject('');
+  content : BehaviorSubject<any> = new BehaviorSubject(''); 
+  sender : BehaviorSubject<any> = new BehaviorSubject(''); 
+  id : BehaviorSubject<any> = new BehaviorSubject(''); 
+  role : BehaviorSubject<any> = new BehaviorSubject(''); 
+  iripin : BehaviorSubject<any> = new BehaviorSubject(''); 
+  password : BehaviorSubject<any> = new BehaviorSubject(''); 
+
 
 constructor() {
 

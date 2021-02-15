@@ -37,12 +37,12 @@
           <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="signup-container">
             <mat-form-field appearance="fill">
                <mat-label>iripin</mat-label>
-               <input matInput formControlName="a_iripin" type="text">
+               <input matInput formControlName="iripin" type="text">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                <mat-label>گذرواژه</mat-label>
-               <input matInput [type]="hide ? 'password' : 'text'" formControlName="a_password" type="password">
+               <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" type="password">
                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                  </button>
@@ -55,6 +55,18 @@
                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                  </button>
             </mat-form-field>
+            <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            >
+            <input type="radio" formControlName="role"  class="example-radio-button" [value]="partner">
+            پارتنر  
+             <input type="radio" formControlName="role"  class="example-radio-button" [value]="player">
+            بازیکن  
+            
+            </mat-radio-group>
+  
+            
 
             <!--p><input type="submit" value="ثبت نام"></p-->
             <button mat-raised-button type="submit" color="warn">ثبت نام</button>

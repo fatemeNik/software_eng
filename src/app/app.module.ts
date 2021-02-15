@@ -55,6 +55,7 @@ import { TournamentComponent } from './components/tournament/tournament.componen
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { RequestListComponent } from './request-list/request-list.component';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -72,7 +73,8 @@ import { ChatComponent } from './components/chat/chat.component';
     ProfileComponent,
     TournamentComponent,
     PlayerComponent,
-    ChatComponent
+    ChatComponent,
+    RequestListComponent
     ],
   imports: [
     BrowserAnimationsModule,

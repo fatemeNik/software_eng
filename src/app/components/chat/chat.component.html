@@ -1,5 +1,5 @@
 
-<form [formGroup]="messageForm" (ngSubmit)="message()" >
+<!--form [formGroup]="messageForm" (ngSubmit)="message()" >
 <mat-grid-list cols="1" rowHeight="100px" class="top">
 
     <mat-grid-tile style="background-color:red" >
@@ -46,6 +46,33 @@
 </mat-grid-list>
 <form (ngSubmit)="show_content()"> <button mat-raised-button type="submit" color="warn">نمایش پیام ها</button></form>
 
-</form>
+</form-->
+
+<form [formGroup]="messageForm" (ngSubmit)="message()">
+    <div class="container" style="margin:100px">
+  <div class="msg">
+     <mat-form-field class="example-full-width">
+              <mat-label>...متن پیام</mat-label>
+              <textarea matInput placeholder="...سلام، حال شما" formControlName="content"></textarea>
+         </mat-form-field>
+  </div>
+
+  <div class="reciever">
+    <mat-form-field appearance="fill">
+    <mat-label>گیرنده</mat-label>
+    <input matInput formControlName="to">
+    </mat-form-field>
+  </div>
+
+  <div class="sendbtn">
+  </div>
+  <div class="show">
+    <p>{{show_content}}</p>
+    <!--button mat-raised-button type="submit" color="warn">نمایش پیام ها</button-->
+    <button mat-raised-button type="submit" color="primary">ارسال</button>
+  </div>
+
+</div>
+
 
 

@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { SharedDataService } from 'src/app/services/sharedData.service';
 
 export interface msg_table {
 
@@ -27,15 +29,32 @@ export class PlayerComponent implements OnInit {
   loading: boolean = false;
   columnsToDisplay = ['partner', 'last_name', 'first_name'];
   expandedElement: msg_table | null;
+  constructor(private api: ApiService, private auth: AuthenticationService,
+     private sharedData: SharedDataService) { 
 
-  constructor(private api: ApiService) { 
     this.api.get_signup().subscribe(data =>{
       this.dataSource = data;
+      console.log(this.dataSource);
+      
     });
     this.loading = true;
+
   }
+
+  
+
 
   ngOnInit(): void {
   } 
 
+
+  request(iripin){
+    console.log(iripin)
+    this.api.request(iripin).subscribe(res =>   
+      {
+        // this.sharedData.to.next(res.this.columnsToDisplay[2]);
+        console.log(res);
+        
+      })
+  }
 }

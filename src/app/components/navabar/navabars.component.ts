@@ -6,6 +6,13 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ApiService } from 'src/app/services/api.service';
+import { PlayerComponent } from '../player/player.component';
+import { RequestListComponent } from 'src/app/request-list/request-list.component';
+
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 @Component({
   selector: 'app-navabars',
@@ -22,12 +29,20 @@ export class NavabarsComponent implements OnInit {
   last_name: string;
   isLog: boolean;
   
-  constructor(public dialog: MatDialog, private sharedData: SharedDataService,
-     private api: ApiService,private auth: AuthenticationService) {}
+  constructor(public dialog: MatDialog, public dialog_notify: MatDialog, private sharedData: SharedDataService,
+     private api: ApiService, private auth: AuthenticationService) {}
 
   
   openDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openDialog_notify() {
+    const dialogRef = this.dialog_notify.open(RequestListComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

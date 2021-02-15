@@ -8,14 +8,15 @@
         <div class="lname-logged-in">
 
           <button mat-button [matMenuTriggerFor]="menu" class="name" *ngIf="isLog">{{first_name}}  {{last_name}}</button>
+          <button  mat-button (click)="openDialog_notify()">
+            <span  class="material-icons"  matBadge="15" matBadgeColor="warn" *ngIf="isLog">notifications_active</span>
+          </button>
           <mat-menu #menu="matMenu">
           <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active" >پروفایل</button>
           <button mat-menu-item (click)="logout()" *ngIf="isLog">خروج  </button>
           </mat-menu>
 
         </div>
-
-       
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

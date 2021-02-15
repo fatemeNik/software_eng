@@ -13,9 +13,16 @@ import { MatDialogRef } from '@angular/material/dialog';
   encapsulation: ViewEncapsulation.None
 })  
 
+
 export class LoginComponent implements OnInit {
 
 
+  // role: string;
+  // roles: string[] = ['بازیکن', 'پارتنر'];
+  partner:string='partner';
+  player:string='player';
+
+  
   public loginForm: FormGroup;
   public SignUpForm: FormGroup;
   public text_login = '';
@@ -33,8 +40,9 @@ export class LoginComponent implements OnInit {
     });
 
     this.SignUpForm = this.formbuildr.group({
-      a_iripin :['', [Validators.required]],
-      a_password :['', [Validators.required]],
+      iripin :['', [Validators.required]],
+      password :['', [Validators.required]],
+      role :['', [Validators.required]],
       a_con_password :['', [Validators.required]]
     });
   }
@@ -61,29 +69,22 @@ export class LoginComponent implements OnInit {
     }
   } 
 
-  signup(){
-    
-    if(this.f.a_iripin.invalid){
-      this.text_signup = "!خطا در ورود";
-      return
-    }else if (this.f.a_password.invalid) {
-      this.text_signup = "!گذرواژه اشتباه است"
-      
-    }else if(this.f.a_con_password.invalid){
-      this.text_signup = "!گذرواژه اشتباه است"
-    }else{
-
-      this.auth.login(this.loginForm.value).subscribe(data =>   
-        {
-          if(data)
-            this.onNoClick();
-          console.log(data);
-        },
-        err=>{
-          this.text_signup = "یا گذرواژه اشتباه است iripin"
-        })
-    }
-  }  
+   signup(){
+       if(this.s.a_con_password == this.s.password){
+        this.auth.signup(this.SignUpForm.value).subscribe(data =>   
+          { 
+            if(data)
+               this.onNoClick();
+            console.log(data);
+            this.text_signup = "ثبت نام با موفقیت انجام شد"
+          })
+        }else{
+          console.log(this.s.a_con_password);
+          console.log(this.s.password);
+          
+          this.text_signup = "گذرواژه ها مطابقت ندارند"
+        }   
+   }  
 
 
   onNoClick(): void {
@@ -92,6 +93,10 @@ export class LoginComponent implements OnInit {
 
   get f(){
     return this.loginForm.controls;
+  }
+
+  get s(){
+    return this.SignUpForm.controls;
   }
 
 }

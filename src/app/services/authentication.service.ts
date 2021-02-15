@@ -1,6 +1,6 @@
 import { SharedDataService } from './sharedData.service';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -10,6 +10,12 @@ export class AuthenticationService {
     public currentUser: Observable<any>;
 
     constructor(private http: HttpClient, private sharedData: SharedDataService) {
+        // let temp =localStorage.getItem('currentUser');
+        // let temp =localStorage.getItem('currentUser');
+        // if (temp) {
+        //     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(temp));
+        //     this.currentUser = this.currentUserSubject.asObservable();
+        // }
         this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
     }
@@ -33,31 +39,22 @@ export class AuthenticationService {
     }
 
     message(data) {
-        return this.http.post<any>('http://127.0.0.1:5000/message', data)
-            .pipe(map(user => {
-                // this.xml.getAllResponseHeaders();
-                this.sharedData.to.next(user.to);
-                this.sharedData.content.next(user.content); 
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-                console.log(user);
-                return user;
-            }));
+        return this.http.post<any>('http://127.0.0.1:5000/message', data);
     }
     
-    
-    show_content(data) {
-        return this.http.post<any>('http://127.0.0.1:5000/show_content', data)
-            .pipe(map(user => {
-                // this.xml.getAllResponseHeaders();
-                this.sharedData.to.next(user.to);
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-                console.log(user);
-                return user;
-            }));
-    }
-    
+
+    signup(data){
+        return this.http.post<any>('http://127.0.0.1:5000/signup',data)
+        .pipe(map(user => {
+            this.sharedData.iripin.next(user.iripin);
+            this.sharedData.role.next(user.role);
+            this.sharedData.password.next(user.password);
+            console.log(user);
+            return user;
+        }));
+     }
+      
+ 
 
     logout() {
         console.log(JSON.parse(localStorage.getItem('currentUser')));
