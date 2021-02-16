@@ -2,12 +2,13 @@ import { SharedDataService } from './../../services/sharedData.service';
 import { LoginComponent } from './../login/login.component';
 import { templateJitUrl, templateSourceUrl } from '@angular/compiler';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ApiService } from 'src/app/services/api.service';
 import { PlayerComponent } from '../player/player.component';
 import { RequestListComponent } from 'src/app/request-list/request-list.component';
+import { stringify } from '@angular/compiler/src/util';
 
 
 export interface DialogData {
@@ -17,6 +18,7 @@ export interface DialogData {
 @Component({
   selector: 'app-navabars',
   templateUrl: './navabars.component.html',
+  // template: 'childNotif : {{notif_counter}}',
   styleUrls: ['./navabars.component.scss']
 
 })
@@ -24,18 +26,21 @@ export class NavabarsComponent implements OnInit {
 
   myimage1: string = "assets/images/atp-logo.svg"
   // myimage2: string = "assets/images/816149.jpg"
-
+  // @Input() notif_counter:any;
+  notif_counter:number;
   first_name: string;
   last_name: string;
   isLog: boolean;
   
   constructor(public dialog: MatDialog, public dialog_notify: MatDialog, private sharedData: SharedDataService,
-     private api: ApiService, private auth: AuthenticationService) {}
-
+     private api: ApiService, private auth: AuthenticationService) {
   
+     }
+  
+     
+     
   openDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -46,6 +51,7 @@ export class NavabarsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      
     });
   }
 
@@ -63,7 +69,8 @@ export class NavabarsComponent implements OnInit {
 
   ngOnInit() {  
 
-
+    this.api.request_list();
+    
     this.sharedData.fname.subscribe(name =>{
 
       this.first_name = name;
@@ -75,9 +82,14 @@ export class NavabarsComponent implements OnInit {
     this.sharedData.isLogin.subscribe(Boolean =>{
 
       this.isLog = Boolean;
+    });
+    this.sharedData.parentNotif.subscribe(name =>{
+      this.notif_counter = name;
     })
-    // this.sharedData.isLogin = this.isLog;    
-    // console.log('this.sharedData.fname');
+    console.log(this.sharedData.parentNotif.value);
+
+   
+
   }
 
 

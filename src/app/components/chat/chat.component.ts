@@ -1,20 +1,24 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { SharedDataService } from 'src/app/services/sharedData.service';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkVirtualScrollViewport} from "@angular/cdk/scrolling";
 
 export interface content_table {
 
   content: string;
 }
-
+ 
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.scss']
+  styleUrls: ['./chat.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChatComponent implements OnInit {
 
@@ -31,7 +35,7 @@ export class ChatComponent implements OnInit {
   public messageForm : FormGroup;
 
   content : string;
-
+  contents :string[];
 
   sender : string;
 
@@ -46,6 +50,8 @@ export class ChatComponent implements OnInit {
     //   this.dataSource = data;
     // });
 
+
+
     this.loading = true;
 
      }
@@ -54,7 +60,9 @@ export class ChatComponent implements OnInit {
 
     this.sharedData.content.subscribe(name =>{
 
-      this.content = name;
+      this.content = name; 
+      if(name)
+        this.contents.push(name);
     });
 
     this.sharedData.sender.subscribe(name =>{

@@ -56,6 +56,7 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { RequestListComponent } from './request-list/request-list.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -115,7 +116,8 @@ import { RequestListComponent } from './request-list/request-list.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    ScrollingModule,
     //AngularFontAwesomeModule
     RouterModule.forRoot(routes)
   ],

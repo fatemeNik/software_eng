@@ -18,7 +18,9 @@ export class SharedDataService {
   id : BehaviorSubject<any> = new BehaviorSubject(''); 
   role : BehaviorSubject<any> = new BehaviorSubject(''); 
   iripin : BehaviorSubject<any> = new BehaviorSubject(''); 
-  password : BehaviorSubject<any> = new BehaviorSubject(''); 
+  password : BehaviorSubject<any> = new BehaviorSubject('');
+  confirm_password : BehaviorSubject<any> = new BehaviorSubject(''); 
+  parentNotif : BehaviorSubject<any> = new BehaviorSubject(''); 
 
 
 constructor() {

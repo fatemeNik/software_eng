@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ApiService } from 'src/app/services/api.service';
 
 
 @Component({
@@ -31,9 +32,10 @@ export class LoginComponent implements OnInit {
   hide = true;
   
   constructor(private formbuildr:FormBuilder, private http:HttpClient,
-     private auth: AuthenticationService,public dialogRef: MatDialogRef<LoginComponent>) { }
+     private auth: AuthenticationService,public dialogRef: MatDialogRef<LoginComponent> ,private api:ApiService) { }
 
   ngOnInit(): void {
+    this.api.request_list();
     this.loginForm = this.formbuildr.group({
       iripin :['', [Validators.required]],
       password :['', [Validators.required]]
@@ -70,13 +72,14 @@ export class LoginComponent implements OnInit {
   } 
 
    signup(){
-       if(this.s.a_con_password == this.s.password){
+       if(this.s.a_con_password.value == this.s.password.value){
         this.auth.signup(this.SignUpForm.value).subscribe(data =>   
           { 
             if(data)
-               this.onNoClick();
+               this.text_signup = "ثبت نام با موفقیت انجام شد"
+               //this.onNoClick();
             console.log(data);
-            this.text_signup = "ثبت نام با موفقیت انجام شد"
+           
           })
         }else{
           console.log(this.s.a_con_password);

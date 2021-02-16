@@ -79,11 +79,10 @@ export class ApiService {
   request_list() {
   let header: HttpHeaders = new HttpHeaders();
   header.append( "Content-Type", "application/json" );
-  
   //console.log(String(this.http.get<any>('http://127.0.0.1:5000/request', {headers: header})));
   return this.http.get<any>('http://127.0.0.1:5000/request', {headers: header});
-  
 }
+
 
  accept_request(data) {
   let header: HttpHeaders = new HttpHeaders();

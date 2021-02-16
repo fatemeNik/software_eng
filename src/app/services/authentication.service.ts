@@ -37,21 +37,16 @@ export class AuthenticationService {
                 return user;
             }));
     }
-
+ 
     message(data) {
         return this.http.post<any>('http://127.0.0.1:5000/message', data);
     }
     
 
     signup(data){
+        console.log(data);
         return this.http.post<any>('http://127.0.0.1:5000/signup',data)
-        .pipe(map(user => {
-            this.sharedData.iripin.next(user.iripin);
-            this.sharedData.role.next(user.role);
-            this.sharedData.password.next(user.password);
-            console.log(user);
-            return user;
-        }));
+           
      }
       
  
