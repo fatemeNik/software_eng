@@ -40,7 +40,14 @@ export class ApiService {
 
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json" );
-      return this.http.get('https://inshallahfinal.herokuapp.com/tournament', {headers: header});
+      return this.http.get('http://127.0.0.1:5000/tournament', {headers: header});
+    }
+
+    get_participant(data){
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      // this.sharedData.tournament_id.next(data.id);
+      return this.http.get('http://127.0.0.1:5000/participant', {headers: header});
     }
 
     get_signup(){  
@@ -55,8 +62,7 @@ export class ApiService {
       header.append("Access-Control-Allow-Origin","*");
       return this.http.get('http://127.0.0.1:5000/message', {headers: header});
     }
-
-        
+   
      
     show_content(data) {
       return this.http.post<any>('http://127.0.0.1:5000/show_content', data)
@@ -105,6 +111,12 @@ export class ApiService {
    
    return this.http.post<any>('http://127.0.0.1:5000/reject_request', {id:data})
  }
+
+ tournament_signup(data) {
+  console.log(data);
+  return this.http.post<any>('http://127.0.0.1:5000/tournament_signup',data);
+
+}
 
  
 }

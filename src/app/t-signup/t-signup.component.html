@@ -1,0 +1,39 @@
+<div class="t_signup">
+
+     <p>{{text}}</p>
+          <form [formGroup]="tSignUpForm" (ngSubmit)="tournament_signup()" class="tsign-container">
+            
+            <mat-form-field appearance="fill">
+               <mat-label>نام</mat-label>
+               <input matInput formControlName="first_name" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label> نام خانوادگی</mat-label>
+               <input matInput formControlName="last_name" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label>iripin</mat-label>
+               <input matInput formControlName="iripin" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label>سن</mat-label>
+               <input matInput formControlName="age" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+               <mat-label>آیدی مسابقه</mat-label>
+               <input matInput formControlName="id" type="text">
+            </mat-form-field>
+             
+
+            <!-- <p><input formControlName="con_password" type="password" placeholder="Confirm Password" ></p> -->
+            <!-- <p><input type="submit" value="ورود"></p>-->
+            <button mat-raised-button type="submit" color="warn">ثبت اطلاعات</button>
+
+          </form>
+        
+
+</div>

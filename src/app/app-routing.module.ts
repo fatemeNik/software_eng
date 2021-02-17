@@ -8,6 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './components/table-palyer/table.component';
 import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { TSignupComponent } from './t-signup/t-signup.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 
 export const routes: Routes = [
@@ -19,7 +21,9 @@ export const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'tournament', component: TournamentComponent},
   {path: 'player', component: PlayerComponent},
-  {path: 'chat', component: ChatComponent}
+  {path: 'chat', component: ChatComponent},
+  {path: 'tsignup', component: TSignupComponent},
+  {path: 'participant', component: ParticipantsComponent}
 ];
 
 

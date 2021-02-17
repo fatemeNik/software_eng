@@ -22,38 +22,30 @@ export interface content_table {
 })
 export class ChatComponent implements OnInit {
 
-  
-  // tiles: Tile[] = [
-  //   {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-  //   {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-  //   {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-  //   {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  // ];
-
-
+  public data: any = []
 
   public messageForm : FormGroup;
 
   content : string;
-  contents :string[];
 
   sender : string;
 
-  dataSource: any;
+  messages :any;
+ 
+
   loading: boolean = false;
+
+  columnsToDisplay = ['content']
 
 
   constructor(private formbuildr:FormBuilder, private sharedData: SharedDataService,
-    private api: ApiService, private auth: AuthenticationService) {
+    private api: ApiService, private auth: AuthenticationService ) {
     
-    // this.api.show_content().subscribe(data =>{
-    //   this.dataSource = data;
-    // });
-
-
-
-    this.loading = true;
-
+    //   this.api.show_content(this.messageForm.value).subscribe(data =>{
+      
+    //     this.messages = data;
+      
+    //  });  
      }
 
   ngOnInit(): void {
@@ -61,8 +53,7 @@ export class ChatComponent implements OnInit {
     this.sharedData.content.subscribe(name =>{
 
       this.content = name; 
-      if(name)
-        this.contents.push(name);
+      
     });
 
     this.sharedData.sender.subscribe(name =>{
@@ -92,9 +83,12 @@ export class ChatComponent implements OnInit {
     
       this.api.show_content(this.messageForm.value).subscribe(res =>   
         {
+          this.data = res;
           this.sharedData.to.next(res.to);
-                
-                console.log(this.sharedData.to.value);
+              console.log(this.data);
+               
+              this.messages=this.data;
+              console.log(this.messages);
               
         })
       }

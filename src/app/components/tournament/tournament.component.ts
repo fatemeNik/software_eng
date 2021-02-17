@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { SharedDataService } from 'src/app/services/sharedData.service';
 
 
 export interface tournament_table {
@@ -31,21 +33,27 @@ export interface tournament_table {
 })
 export class TournamentComponent implements OnInit {
 
+
+
   dataSource: any;
+ 
   loading: boolean = false;
   columnsToDisplay = ['registration_fee','participant_ct', 'city',
    'court_surface', 'start_date', 'title', 'id'];
   expandedElement: tournament_table | null;
 
-  constructor(private api: ApiService) { 
+  constructor(private api: ApiService,private sharedData: SharedDataService) { 
 
     this.api.get_tournament().subscribe(data =>{
       this.dataSource = data;
+     
     });
     this.loading = true;
   }
 
   ngOnInit(): void {
+    
   }
+
 
 }

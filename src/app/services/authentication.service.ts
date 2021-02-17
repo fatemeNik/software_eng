@@ -45,7 +45,7 @@ export class AuthenticationService {
 
     signup(data){
         console.log(data);
-        return this.http.post<any>('http://127.0.0.1:5000/signup',data)
+        return this.http.post<any>('http://127.0.0.1:5000/signup',data);
            
      }
       

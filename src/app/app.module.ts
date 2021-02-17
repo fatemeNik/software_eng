@@ -57,6 +57,8 @@ import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { RequestListComponent } from './request-list/request-list.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TSignupComponent } from './t-signup/t-signup.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -75,7 +77,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     TournamentComponent,
     PlayerComponent,
     ChatComponent,
-    RequestListComponent
+    RequestListComponent,
+    TSignupComponent,
+    ParticipantsComponent
     ],
   imports: [
     BrowserAnimationsModule,

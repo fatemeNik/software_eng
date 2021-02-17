@@ -11,6 +11,7 @@ export class SharedDataService {
 
   lname: BehaviorSubject<any> = new BehaviorSubject('');
   fname: BehaviorSubject<any> = new BehaviorSubject('');
+  age: BehaviorSubject<any> = new BehaviorSubject('');
   isLogin: BehaviorSubject<boolean> = new BehaviorSubject(false);// in bayad ke false bashe
   to : BehaviorSubject<any> = new BehaviorSubject('');
   content : BehaviorSubject<any> = new BehaviorSubject(''); 
@@ -21,6 +22,7 @@ export class SharedDataService {
   password : BehaviorSubject<any> = new BehaviorSubject('');
   confirm_password : BehaviorSubject<any> = new BehaviorSubject(''); 
   parentNotif : BehaviorSubject<any> = new BehaviorSubject(''); 
+  tournament_id : BehaviorSubject<any> = new BehaviorSubject(''); 
 
 
 constructor() {
