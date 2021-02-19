@@ -7,10 +7,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { SharedDataService } from 'src/app/services/sharedData.service';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkVirtualScrollViewport} from "@angular/cdk/scrolling";
+//  import {NotificationsService} from 'angular2-notifications';
+
 
 export interface content_table {
 
   content: string;
+
 }
  
 
@@ -20,6 +23,8 @@ export interface content_table {
   styleUrls: ['./chat.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
+
 export class ChatComponent implements OnInit {
 
   public data: any = []
@@ -39,7 +44,7 @@ export class ChatComponent implements OnInit {
 
 
   constructor(private formbuildr:FormBuilder, private sharedData: SharedDataService,
-    private api: ApiService, private auth: AuthenticationService ) {
+    private api: ApiService, private auth: AuthenticationService) {
     
     //   this.api.show_content(this.messageForm.value).subscribe(data =>{
       
@@ -92,6 +97,24 @@ export class ChatComponent implements OnInit {
               
         })
       }
+
+      // onSuccess(message){
+      //   this.service.success('Success', message, {
+      //     position: ['bottom', 'right'],
+      //     timeOut: 2000,
+      //     animate: 'fade',
+      //     showProgressBar: true
+      //   });
+      // }
+  
+      // onError(message){
+      //   this.service.error('Error', message,{
+      //     position: ['bottom', 'right'],
+      //     timeOut: 2000,
+      //     animate: 'fade',
+      //     showProgressBar: true
+      //   });
+      // }
  
 
   }

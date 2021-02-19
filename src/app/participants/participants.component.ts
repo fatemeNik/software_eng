@@ -16,22 +16,30 @@ export class ParticipantsComponent implements OnInit {
 
   constructor(private api:ApiService,private sharedData:SharedDataService) { 
 
-    this.api.get_participant(this.sharedData.tournament_id.value).subscribe(data =>{   
-      this.participant = data;  })
-  }
+    // this.api.get_participant(this.sharedData.tournament_id.value).subscribe(data =>{   
+    //   this.participant = data; })
+  
+
+
+    }
+    
 
   ngOnInit(): void {
+
+    this.participant = this.sharedData.tournament_id.value;
+    console.log(this.participant);
+    
   }
 
-  // get_participant(){
+  //   get_participant(id){
 
-  //   this.api.get_participant(this.sharedData.tournament_id.value).subscribe(data =>{   
-  //     this.participant = data;  
-  //     console.log(this.sharedData.tournament_id.value);
+  //   this.api.participant(id).subscribe(data =>{ 
+  //     this.participant = data; 
   //     console.log(data);
-    
-  //  }); 
+      
+  //  })
   
   // }
+  
   
 }

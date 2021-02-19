@@ -26,6 +26,7 @@ export class RequestListComponent implements OnInit {
     // parentNotif:any;
     dataSource: any;
     displayedColumns: string[] = ['req_sender'];
+    
   // expandedElement: request_table | null;
   // loading: boolean = false;
 

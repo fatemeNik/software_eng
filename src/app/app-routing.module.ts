@@ -10,6 +10,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { TSignupComponent } from './t-signup/t-signup.component';
 import { ParticipantsComponent } from './participants/participants.component';
+import { CoachComponent } from './coach/coach.component';
 
 
 export const routes: Routes = [
@@ -23,7 +24,8 @@ export const routes: Routes = [
   {path: 'player', component: PlayerComponent},
   {path: 'chat', component: ChatComponent},
   {path: 'tsignup', component: TSignupComponent},
-  {path: 'participant', component: ParticipantsComponent}
+  {path: 'participant', component: ParticipantsComponent},
+  {path: 'coach', component: CoachComponent}
 ];
 
 

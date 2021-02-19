@@ -24,7 +24,7 @@
     height: 1000px;
 }
 
-.contents{
+.scroll{
    
     background-color: rgba(243, 130, 55, 0.384);
     
@@ -33,5 +33,10 @@
     font-weight: bold;
     text-align: right;
     padding:5px 0 0 2px;
+
+    width: 500px; 
+    height: 110px; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
 }
 

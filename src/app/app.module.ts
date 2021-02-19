@@ -31,7 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -59,7 +59,12 @@ import { RequestListComponent } from './request-list/request-list.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TSignupComponent } from './t-signup/t-signup.component';
 import { ParticipantsComponent } from './participants/participants.component';
-
+import { CoachComponent } from './coach/coach.component';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { SnackBarNotComponent } from './components/snack-bar-not/snack-bar-not.component';
+import { GlobalErrorHandler } from './components/global-error-handler/global-error-handler.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ErrorHandler } from '@angular/core';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -79,9 +84,13 @@ import { ParticipantsComponent } from './participants/participants.component';
     ChatComponent,
     RequestListComponent,
     TSignupComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    CoachComponent,
+    SnackBarComponent,
+    SnackBarNotComponent
     ],
   imports: [
+    MatSnackBarModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule, CommonModule, ReactiveFormsModule, FormsModule, HttpClientModule,
@@ -113,7 +122,6 @@ import { ParticipantsComponent } from './participants/participants.component';
     MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,
-    MatSnackBarModule,
     MatSortModule,
     MatTableModule,
     MatTabsModule,
@@ -129,7 +137,8 @@ import { ParticipantsComponent } from './participants/participants.component';
     RouterModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true  },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
     
   ],
   bootstrap: [AppComponent]

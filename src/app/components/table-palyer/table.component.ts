@@ -11,7 +11,7 @@ export interface player_table {
   iripin: string;
   image: string;
 }
-
+ 
 // const ELEMENT_DATA: player_table[] = [];
 @Component({
   selector: 'app-table',
@@ -33,10 +33,15 @@ export class TableComponent implements OnInit {
 
   columnsToDisplay = ['iripin', 'city', 'last_name', 'first_name', 'id'];
   expandedElement: player_table | null;
+
   constructor(private api: ApiService) {
 
     this.api.get_player_data().subscribe(data => {
-      this.dataSource = data;
+      let temp = [];
+      for (let i = 0 ; i <= 9; i++){
+        temp.push(data[i]);
+      }
+      this.dataSource = temp;
     });
     this.loading = true;
   }

@@ -27,8 +27,11 @@
 
   <mat-label> پیام ها </mat-label>
   
-  <li *ngFor="let m of messages" class="contents">{{sender}} {{m}}</li>
-   
+  <!--cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    
+  </cdk-virtual-scroll-viewport--> 
+
+   <li *ngFor="let m of messages" class="scroll">{{sender}} {{m}}</li>
    
  </div>
 

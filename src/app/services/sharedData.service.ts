@@ -23,6 +23,7 @@ export class SharedDataService {
   confirm_password : BehaviorSubject<any> = new BehaviorSubject(''); 
   parentNotif : BehaviorSubject<any> = new BehaviorSubject(''); 
   tournament_id : BehaviorSubject<any> = new BehaviorSubject(''); 
+  city : BehaviorSubject<any> = new BehaviorSubject(''); 
 
 
 constructor() {

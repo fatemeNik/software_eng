@@ -19,6 +19,12 @@ export class ApiService {
       return this.http.get('https://inshallahfinal.herokuapp.com/player', {headers: header});
     } 
 
+    get_coach_data(){
+      let header: HttpHeaders = new HttpHeaders();
+      header.append( "Content-Type", "application/json" );
+      return this.http.get('http://127.0.0.1:5000/coach', {headers: header});
+    }
+
     logout_player(){
 
       let header: HttpHeaders = new HttpHeaders();
@@ -43,12 +49,14 @@ export class ApiService {
       return this.http.get('http://127.0.0.1:5000/tournament', {headers: header});
     }
 
-    get_participant(data){
-      let header: HttpHeaders = new HttpHeaders();
-      header.append( "Content-Type", "application/json" );
-      // this.sharedData.tournament_id.next(data.id);
-      return this.http.get('http://127.0.0.1:5000/participant', {headers: header});
-    }
+    // get_participant(data){
+    //   let header: HttpHeaders = new HttpHeaders();
+    //   header.append( "Content-Type", "application/json" );
+    //   // this.sharedData.tournament_id.next(data.id);
+    //   return this.http.get('http://127.0.0.1:5000/participant', {headers: header});
+    // }
+
+  
 
     get_signup(){  
       let header: HttpHeaders = new HttpHeaders();
@@ -112,11 +120,33 @@ export class ApiService {
    return this.http.post<any>('http://127.0.0.1:5000/reject_request', {id:data})
  }
 
+ participant(data){
+  let header: HttpHeaders = new HttpHeaders();
+  header.append( "Content-Type", "application/json" );
+
+  this.sharedData.tournament_id.next(data.id);
+  
+  console.log(data);
+  
+  return this.http.post<any>('http://127.0.0.1:5000/participant', {id:data})
+}
+
  tournament_signup(data) {
   console.log(data);
   return this.http.post<any>('http://127.0.0.1:5000/tournament_signup',data);
 
 }
 
+weather(data){
+  
+  let header: HttpHeaders = new HttpHeaders();
+  header.append( "Content-Type", "application/json" );
+
+  this.sharedData.city.next(data.city);
+  
+  console.log(data);
+  
+  return this.http.post<any>('http://127.0.0.1:5000/weather', {city:data})
+}
  
 }

@@ -13,7 +13,11 @@
     
      <ng-container matColumnDef="participant_ct">
        <th  mat-header-cell *matHeaderCellDef class="thead">تعداد شرکت کنندگان </th>
-       <td mat-cell *matCellDef="let element" class="tcontent"> <a [routerLink]="['/participant']" routerLinkActive="router-link-active">{{element.participant_ct}} </a></td>
+       <td mat-cell *matCellDef="let element" class="tcontent"> 
+      
+       <button (click)="get_participant(element.id)" >{{element.participant_ct}}</button>
+       
+       </td>
      </ng-container>
 
      <ng-container matColumnDef="court_surface">
@@ -51,6 +55,7 @@
                <a [routerLink]="['/tsignup']" routerLinkActive="router-link-active"> 
                <button mat-raised-button color="accent">ثبت نام</button>
                </a>
+               <li *ngFor="let obj of participants">{{obj| json}}</li>
 
             </div>
          </div>

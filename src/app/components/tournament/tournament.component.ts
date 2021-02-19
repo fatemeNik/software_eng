@@ -37,6 +37,8 @@ export class TournamentComponent implements OnInit {
 
   dataSource: any;
  
+  participants:any;
+
   loading: boolean = false;
   columnsToDisplay = ['registration_fee','participant_ct', 'city',
    'court_surface', 'start_date', 'title', 'id'];
@@ -55,5 +57,18 @@ export class TournamentComponent implements OnInit {
     
   }
 
+  get_participant(id){
+
+    this.api.participant(id).subscribe(data =>{  
+      console.log(data);
+      this.participants=data;
+      console.log(this.participants);
+      
+      //this.sharedData.tournament_id.next(data); 
+      //console.log( this.sharedData.tournament_id.value);
+       
+   })
+  
+  }
 
 }

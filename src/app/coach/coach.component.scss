@@ -4,7 +4,7 @@
   
   
   .body-container{
-    background-image: url("../../../assets/images/tennis_background_lowres.jpg");
+   
     background-size: cover;
     min-height: 1000px; 
   }
@@ -80,25 +80,9 @@
   
   } 
   
-  .element-diagram{
-    // min-width: 80px;
-    // border: 2px solid black;
-    padding:10px 0 20px 0;
-    font-weight: lighter;
-    margin: 8px 0 8px 0;
-    // height: 104px;
+  .icon{
+    //   width:100px;
+    //   height:100px;
+      margin: 0 0 0 5px;
   }
 
-  li{
-    color: #1a237e;
-    margin:5% 0 0 0;
-    float: right;
-    list-style-type:none;
-    padding:5px 5px 5px 5px;
-  }
-  .row{
-    font-size: 18px;
-    color:#1a237e;
-  }
-  
-  

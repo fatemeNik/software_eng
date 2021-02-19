@@ -1,63 +1,9 @@
-// // .back-img img{
-// //     width: 100%;
-// // }
-// html {
-//     overflow: hidden;
-// }
-// body {
-//     margin: 0;
-//     font-size: 26px;
-//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-//     color: #ffffff;
-//     height: 100vh;
-//     perspective: 1px;
-//     transform-style: preserve-3d;
-//     overflow-x:hidden;
-//     overflow-y:auto;
-// }
-// .parallax-wrapper {
-//     width: 100vw;
-//     height:100vh;
-//     padding-top:20vh;
-//     box-sizing: border-box;
-//     transform-style: preserve-3d;
-// }
-// .parallax-wrapper::before {
-//     content:"";
-//     width: 100vw;
-//     height: 100vh;
-//     top:0;
-//     left:0;
-//     background-image: url("../../../assets/images/816149.jpg");
-//     position: absolute;
-//     z-index: -1;
-//     transform:translateZ(-1px) scale(2);
-// }
-// .regular-wrapper {
-//     width: 100vw;
-//     height: 100vh;
-//     padding-top: 10vh;
-//     background-image: url("../../../assets/images/grass_tennis.jpg");
-//     z-index: 2;
-//     position: relative;
-//     box-sizing: border-box;
-
-// }
-// .content {
-//     margin: 0 auto;
-//     padding: 50px;
-//     width: 50%;
-//     background: #aaa;
-// }
-
-
 .parallax {
     /* The image used */
     background-image: url("../../../assets/images/enghelab_court.jpg");
   
     /* Set a specific height */
-    min-height: 800px; 
-  
+    min-height: 1000px;   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -65,40 +11,12 @@
     background-size: cover;
   }
 
-  // .parallax-scroll{
-
-  //   height: 1px; 
-  //   background-image: url("../../../assets/images/Wilson-Australian-Open-Tennis-Ball.jpg");
-     
-  //   min-height: 880px;
-  //   font-size: 36px;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  // }
-
-  // .parallax-scroll2{
-
-  //   height:1px; 
-  //   background-image: url("../../../assets/images/816149.jpg"); 
-  //   min-height: 550px;
-  //   font-size: 36px;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-
-  // }
-
   .parallax-scroll3{
-
-    height: 200px; 
-    //background-image: url("../../../assets/images/parallex_middle.jpg"); 
-    background-color: #000;
-    min-height: 250px;
-    font-size: 36px;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 500px; 
+    background: transparent url("../../../assets/images/federer-typhon2.jpg") no-repeat center center fixed;
     background-size: cover;
+    width: 100%;
+    float: left;
   }
 
 .parallax-scroll4{
@@ -116,16 +34,6 @@
   background-size: cover;
     
 }
-
-// .content{
-//   text-align: justify;
-//   padding-top: 2%;
-//   color: rgb(0, 0, 0);
-//   background-color: rgb(93, 133, 80);
-//   font-size: 24px;
-//   height: 250px;
-//   font-family: Arial;
-// }
 
 h3 {
   font: 36px "Lato", sans-serif;
@@ -159,7 +67,24 @@ h3 {
   text-align: center;
   padding: 8%;
   text-shadow: 3px 3px 1px rgba(255, 81, 0, 0.438);
-  
-  
 }
 
+.txt-middle{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.txt-middle p{
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin: 10%;
+  font-size: 54px;
+}
+
+.container{
+position: relative;
+min-height: 1px;
+padding-right: 15px;
+padding-left: 15px;
+}

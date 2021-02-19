@@ -6,9 +6,9 @@
     <table mat-table 
       [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
 
-      <ng-container matColumnDef="partner">
-        <th mat-header-cell *matHeaderCellDef class="thead"> پارتنر </th>
-        <td mat-cell *matCellDef="let element" class="tcontent"> {{element.partner}} </td>
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef class="thead"> شهر </th>
+        <td mat-cell *matCellDef="let element" class="tcontent"> {{element.city}} </td>
       </ng-container>
 
       <ng-container matColumnDef="last_name">
@@ -21,10 +21,10 @@
        <td mat-cell *matCellDef="let element" class="tcontent"> {{element.first_name}} </td>
      </ng-container>
     
-     <!--ng-container matColumnDef="id">
-       <th  mat-header-cell *matHeaderCellDef class="thead"> شماره </th>
-       <td mat-cell *matCellDef="let element" class="tcontent"> {{element.id}}  </td>
-     </ng-container-->
+     <ng-container matColumnDef="degree">
+       <th  mat-header-cell *matHeaderCellDef class="thead"> درجه </th>
+       <td mat-cell *matCellDef="let element" class="tcontent"> {{element.degree}}  </td>
+     </ng-container>
     
     <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
     <ng-container matColumnDef="expandedDetail">
@@ -33,14 +33,7 @@
             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
             <div class="element-diagram" >
                 <!-- <img src="{{element.prize}}" alt=""> -->
-                 <a [routerLink]="['/chat']" routerLinkActive="router-link-active"> <mat-icon class="icon"> message</mat-icon> </a>
-                  
-                  <button mat-raised-button *ngIf="!sentRequest" (click)="request(element.iripin)" color="primary">
-                   درخواست </button>
-
-                  <button mat-raised-button *ngIf="sentRequest" disabled>...در انتظار</button>
-
-
+                
             </div>
          </div>
     </td>
