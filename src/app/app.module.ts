@@ -138,7 +138,7 @@ import { ErrorHandler } from '@angular/core';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true  },
-    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    // { provide: ErrorHandler, useClass: GlobalErrorHandler },
     
   ],
   bootstrap: [AppComponent]

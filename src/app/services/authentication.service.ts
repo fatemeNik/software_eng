@@ -25,7 +25,7 @@ export class AuthenticationService {
     }
 
     login(data) {
-        return this.http.post<any>('http://127.0.0.1:5000/auth', data)
+        return this.http.post<any>('https://inshallahfinal.herokuapp.com/auth', data)
             .pipe(map(user => {
                 this.sharedData.fname.next(user.first_name); 
                 this.sharedData.lname.next(user.last_name); 
@@ -39,13 +39,13 @@ export class AuthenticationService {
     }
  
     message(data) {
-        return this.http.post<any>('http://127.0.0.1:5000/message', data);
+        return this.http.post<any>('https://inshallahfinal.herokuapp.com/message', data);
     }
     
 
     signup(data){
         console.log(data);
-        return this.http.post<any>('http://127.0.0.1:5000/signup',data);
+        return this.http.post<any>('https://inshallahfinal.herokuapp.com/signup',data);
            
      }
       

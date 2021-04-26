@@ -22,14 +22,14 @@ export class ApiService {
     get_coach_data(){
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json" );
-      return this.http.get('http://127.0.0.1:5000/coach', {headers: header});
+      return this.http.get('https://inshallahfinal.herokuapp.com/coach', {headers: header});
     }
 
     logout_player(){
 
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json");
-      return this.http.get('http://127.0.0.1:5000/logout', {headers: header});
+      return this.http.get('https://inshallahfinal.herokuapp.com/logout', {headers: header});
     } 
 
     update_player_data(data){
@@ -39,14 +39,14 @@ export class ApiService {
       //  header.append( "Content-Type", "application/json" );
       //  header.append( "x-access-token", String(currentUser.token) );
       //return this.http.put('http://127.0.0.1:5000/new',data, {headers: header});
-      return this.http.put('http://127.0.0.1:5000/update', data);
+      return this.http.put('https://inshallahfinal.herokuapp.com/update', data);
     }
 
     get_tournament(){
 
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json" );
-      return this.http.get('http://127.0.0.1:5000/tournament', {headers: header});
+      return this.http.get('https://inshallahfinal.herokuapp.com/tournament', {headers: header});
     }
 
     // get_participant(data){
@@ -61,19 +61,19 @@ export class ApiService {
     get_signup(){  
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json" );
-      return this.http.get('http://127.0.0.1:5000/signup', {headers: header});
+      return this.http.get('https://inshallahfinal.herokuapp.com/signup', {headers: header});
     }
 
     get_message(){  
       let header: HttpHeaders = new HttpHeaders();
       header.append( "Content-Type", "application/json" );
       header.append("Access-Control-Allow-Origin","*");
-      return this.http.get('http://127.0.0.1:5000/message', {headers: header});
+      return this.http.get('https://inshallahfinal.herokuapp.com/message', {headers: header});
     }
    
      
     show_content(data) {
-      return this.http.post<any>('http://127.0.0.1:5000/show_content', data)
+      return this.http.post<any>('https://inshallahfinal.herokuapp.com/show_content', data)
           .pipe(map(user => {
               this.sharedData.to.next(user.to);
               console.log(user);
@@ -86,7 +86,7 @@ export class ApiService {
     header.append( "Content-Type", "application/json" );
     this.sharedData.to.next(data.to);
     console.log(data);
-    return this.http.post<any>('http://127.0.0.1:5000/request', {to:data});
+    return this.http.post<any>('https://inshallahfinal.herokuapp.com/request', {to:data});
     
 }
 
@@ -94,7 +94,7 @@ export class ApiService {
   let header: HttpHeaders = new HttpHeaders();
   header.append( "Content-Type", "application/json" );
   //console.log(String(this.http.get<any>('http://127.0.0.1:5000/request', {headers: header})));
-  return this.http.get<any>('http://127.0.0.1:5000/request', {headers: header});
+  return this.http.get<any>('https://inshallahfinal.herokuapp.com/request', {headers: header});
 }
 
 
@@ -106,7 +106,7 @@ export class ApiService {
    
   console.log(data);
    
-   return this.http.post<any>('http://127.0.0.1:5000/accept_request', {id:data})
+   return this.http.post<any>('https://inshallahfinal.herokuapp.com/accept_request', {id:data})
  }
 
  reject_request(data) {
@@ -117,7 +117,7 @@ export class ApiService {
    
   console.log(data);
    
-   return this.http.post<any>('http://127.0.0.1:5000/reject_request', {id:data})
+   return this.http.post<any>('https://inshallahfinal.herokuapp.com/reject_request', {id:data})
  }
 
  participant(data){
@@ -128,12 +128,12 @@ export class ApiService {
   
   console.log(data);
   
-  return this.http.post<any>('http://127.0.0.1:5000/participant', {id:data})
+  return this.http.post<any>('https://inshallahfinal.herokuapp.com/participant', {id:data})
 }
 
  tournament_signup(data) {
   console.log(data);
-  return this.http.post<any>('http://127.0.0.1:5000/tournament_signup',data);
+  return this.http.post<any>('https://inshallahfinal.herokuapp.com/tournament_signup',data);
 
 }
 
@@ -146,7 +146,7 @@ weather(data){
   
   console.log(data);
   
-  return this.http.post<any>('http://127.0.0.1:5000/weather', {city:data})
+  return this.http.post<any>('https://inshallahfinal.herokuapp.com/weather', {city:data})
 }
  
 }
